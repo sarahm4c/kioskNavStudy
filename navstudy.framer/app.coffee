@@ -206,7 +206,7 @@ mainNav = new Layer
 	y: headline.maxY+42
 	width: 642
 	height: 76
-	backgroundColor: spacer
+	backgroundColor: null
 
 subNavBar = new Layer #background layer
 	x: 0
@@ -254,7 +254,7 @@ scroll.contentInset =
 	bottom: 0
 
 
-## Main Nav ##
+## Populating Main Nav ##
 
 nav = []
 for navItem, i in Categories #create 5 main nav buttons
