@@ -3,13 +3,13 @@
   "Sandwiches": [
     {
       "id": "theItalian",
-    	"name": "The Italian Sandwich",
-    	"ingredients": "Smoked Ham, Chianti Wine Salami, Spicy Sopressa, Provolone, Spicy Giardiniera, Basil Mayo, Fresh Arugula",
-    	"bread": "Hoagie Roll",
-    	"price": 9.59,
-    	"size": "Whole",
-    	"calories": 880,
-    },
+      "name": "The Italian Sandwich",
+      "ingredients": "Smoked Ham, Chianti Wine Salami, Spicy Sopressa, Provolone, Spicy Giardiniera, Basil Mayo, Fresh Arugula",
+      "bread": "Hoagie Roll",
+      "price": 9.59,
+      "size": "Whole",
+      "calories": 880
+      },
 
     {
       "id": "BTB",
@@ -18,72 +18,72 @@
     	"bread": "Tomato Basil Bread",
     	"price": 9.59,
     	"size": "Whole",
-    	"calories": 630,
-    },
+    	"calories": 630
+     },
 
     {
       "id": "modernCaprese",
     	"name": "Modern Caprese Sandwich",
     	"price": 10.59,
     	"size": "Whole",
-    	"calories": 760,
-    },
+    	"calories": 760
+     },
 
     {
       "id": "steakAndArugula",
     	"name": "Steak & Arugula",
     	"price": 10.59,
     	"size": "Whole",
-    	"calories": 500,
-    },
+    	"calories": 500
+     },
 
     {
       "id": "turkeyAppleCheddar",
       "name": "Roasted Turkey, Apple & Cheddar Sandwich",
       "price": 10.59,
       "size": "Whole",
-      "calories": 710,
-    },
+      "calories": 710
+     },
 
     {
       "id": "turkeyBLT",
       "name": "Roasted Turkey & Avocado BLT",
       "price": 10.59,
       "size": "Whole",
-      "calories": 640,
-    },
+      "calories": 640
+      },
 
     {
       "id": "napaChicken",
       "name": "Napa Almond Chicken Salad Sandwich",
       "price": 9.59,
       "size": "Whole",
-      "calories": 550,
-    },
+      "calories": 550
+      },
 
     {
       "id": "turkeySandwich",
       "name": "Turkey Sandwich",
       "price": 7.69,
       "size": "Whole",
-      "calories": 560,
-    },
+      "calories": 560
+      },
 
     {
       "id": "sierraTurkey",
       "name": "Sierra Turkey Sandwich",
       "price": 9.59,
       "size": "Whole",
-      "calories": 730,
-    },
+      "calories": 730
+     },
 
     {
       "id": "hamAndSwiss",
       "name": "Ham & Swiss Sandwich",
       "price": 7.69,
       "size": "Whole",
-      "calories":  730,
-    },
+      "calories":  730
+      },
 
 
     {
@@ -91,15 +91,15 @@
       "name": "Mediterranean Veggie",
       "price": 7.69,
       "size": "Whole",
-      "calories":  440,
-    },
+      "calories":  440
+      },
 
     {
       "id": "tunaSalad",
       "name": "Tuna Salad Sandwich",
       "price": 7.69,
       "size": "Whole",
-      "calories": 670,
-    },
+      "calories": 670
+     }
   ]
 }

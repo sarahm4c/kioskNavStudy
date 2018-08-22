@@ -21,19 +21,7 @@ Utils.insertCSS """
 		font-weight: 400;
 		src: url('./fonts/Calibre-Regular.otf') format("opentype");
 	}
-"""
-
-## Device Type - iPad Air, Landscape ##
-Framer.Device.deviceType = "apple-ipad-air-2-silver"
-Framer.Device.orientation = 90
-
-background = new BackgroundLayer
-SG = require "Styleguide"
-
-
-data = JSON.parse Utils.domLoadDataSync “data/Categories.json”
-
-
+	"""
 ## Colors ##
 white = new Color ("#FFF")
 black = new Color ("#000")
@@ -46,15 +34,17 @@ ltGreyTxt = new Color ("#6F6F75")
 disabledTxt = new Color ("#949499")
 ltGreyBg = new Color ("#F1F1F1")
 clear = "rgba(255,255,255,0)"
+## Device Type - iPad Air, Landscape ##
+Framer.Device.deviceType = "apple-ipad-air-2-silver"
+Framer.Device.orientation = 90
 
-### Icons ###
+Screen.backgroundColor = white
 
-bagelICO = "images/ICO/bagelICO.png"
-coffeeICO = "images/ICO/coffeeICO.png"
-croissantICO = "images/ICO/croissantICO.png"
-kidsICO = "images/ICO/kidsICO.png"
-sandwichICO = "images/ICO/sandwichICO.png"
+# Require Outside Stuff #
+SG = require "Styleguide"
 
+data1 = JSON.parse Utils.domLoadDataSync "data/Categories.json"
+data2 = JSON.parse Utils.domLoadDataSync "data/Sandwiches.json"
 
 ## Font Styles ##
 #  "fontStyle fontWeight fontSize/lineHeight fontFamily"  #
@@ -101,6 +91,10 @@ subnavON =
 	fontFamily: "Calibre-Medium"
 	color: dkGreyTxt
 
+c = data1.Categories
+s = data2.Sandwiches
+
+
 headline = new TextLayer
 	font: H1.font
 	textAlign: H1.textAlign
@@ -111,100 +105,6 @@ headline = new TextLayer
 	y: 24
 	text: "Good morning."
 	width: Screen.width
-
-### Data ###
-###Categories = [
-	{id: "breakfast", name: "Breakfast", icon: bagelICO, subcat1: "Egg Sandwiches", subcat2: "Baked Eggs", subcat3: "Oatmeal", subcat4: "Bagels & Spreads", subcat5: "Coffee & Tea"}
-	{id: "lunchDinner", name: "Lunch & Dinner", icon: sandwichICO, subcat1: "Egg Sandwiches", subcat2: "Baked Eggs", subcat3: "Oatmeal", subcat4: "Bagels & Spreads", subcat5: "Coffee & Tea"}
-	{id: "kids", name: "Kids", icon: kidsICO}
-	{id: "bakery", name: "Bakery", icon: croissantICO, subcat1: "Sweets", subcat2: "Bagels", subcat3: "Pandas"}
-	{id: "beverages", name: "Beverages", icon: coffeeICO, subcat1: "Hot Stuff", subcat2: "Cold Stuff", subcat3: "Fancy Stuff"}
-	]
-SubCats_Breakfast = ["Egg Sandwiches", "Baked Eggs", "Oatmeal", "Bagels & Spreads", "Coffee & Tea"]
-SubCats_Lunch = ["Sandwiches", "Salads", "Soups", "Bowls"]
-SubCats_Kids = ["Soup & Pasta", "Sandwiches", "PANDAS", "Monkeys"]
-SubCats_Bakery = ["Sweets", "Bagels", "Pandas"]
-SubCats_Beverages = ["Coffee & Tea", "Iced Tea & Lemonade", "Smoothies", "Bottled Stuff"]
-
-Sandwiches = []
-theItalian ={
-	name: "The Italian Sandwich",
-	ingredients: "Smoked Ham, Chianti Wine Salami, Spicy Sopressa, Provolone, Spicy Giardiniera, Basil Mayo, Fresh Arugula",
-	bread: "Hoagie Roll",
-	price: 9.59,
-	size: "Whole",
-	calories: 880}
-Sandwiches.push(theItalian)
-BTB ={
-	name: "Bacon Turkey Bravo",
-	ingredients: "Signature Sauce, All-Natural Bacon, Green Leaf Lettuce, Gouda, Turkey, Salt & Pepper, Sliced Tomatoes",
-	bread: "Tomato Basil Bread",
-	price: 9.59,
-	size: "Whole",
-	calories: 630}
-Sandwiches.push(BTB)
-modernCaprese ={
-	name: "Modern Caprese Sandwich",
-	price: 10.59,
-	size: "Whole",
-	calories: 760}
-Sandwiches.push(modernCaprese)
-steakAndArugula ={
-	name: "Steak & Arugula",
-	price: 10.59,
-	size: "Whole",
-	calories: 500,}
-Sandwiches.push(steakAndArugula)
-turkeyAppleCheddar ={
-	name: "Roasted Turkey, Apple & Cheddar Sandwich",
-	price: 10.59,
-	size: "Whole",
-	calories: 710}
-Sandwiches.push(turkeyAppleCheddar)
-turkeyBLT ={
-	name: "Roasted Turkey & Avocado BLT",
-	price: 10.59,
-	size: "Whole",
-	calories: 640}
-Sandwiches.push(turkeyBLT)
-napaChicken ={
-	name: "Napa Almond Chicken Salad Sandwich",
-	price: 9.59,
-	size: "Whole",
-	calories: 550}
-Sandwiches.push(napaChicken)
-turkeySandwich ={
-	name: "Turkey Sandwich",
-	price: 7.69,
-	size: "Whole",
-	calories: 560}
-Sandwiches.push(turkeySandwich)
-sierraTurkey ={
-	name: "Sierra Turkey Sandwich",
-	price: 9.59,
-	size: "Whole",
-	calories: 730}
-Sandwiches.push(sierraTurkey)
-hamAndSwiss = {	
-	name: "Ham & Swiss Sandwich",
-	price: 7.69,
-	size: "Whole",
-	calories:  730}
-Sandwiches.push(hamAndSwiss)
-medVeggie ={
-	name: "Mediterranean Veggie",
-	price: 7.69,
-	size: "Whole",
-	calories:  440}
-Sandwiches.push(medVeggie)
-tunaSalad ={
-	name: "Tuna Salad Sandwich",
-	price: 7.69,
-	size: "Whole",
-	calories: 670}
-Sandwiches.push(tunaSalad)
-###
-
 
 ### Creating Containers ###
 
@@ -261,22 +161,21 @@ scroll.contentInset =
 	bottom: 0
 
 
+
 ## Populating Main Nav ##
 
 nav = []
-for navItem, i in Categories #create 5 main nav buttons
+for option, i in c #create 5 main nav buttons
 	navItem = new SG.navButt
 		parent: mainNav
-		name: navItem.name
-		text: navItem.name
-		icon: navItem.icon
+		name: c[i].name
+		text: c[i].name
+		icon: c[i].icon
 		active: false
 # 		style:
 # 			position: "relative"
 # 			flexGrow: "1"
 	nav.push(navItem)
-
-print Categories[0]
 
 mainNavSum = 0
 for layer in nav
@@ -295,8 +194,6 @@ for layer, i in nav
 		oldWidth = layer.width
 		oldX = layer.x
 
-
-
 ## Navigation Picker Components ##
 
 catPicker = new Layer # moving triangle thing that selects the main nav buttons
@@ -306,13 +203,12 @@ catPicker = new Layer # moving triangle thing that selects the main nav buttons
 	width: 20
 	rotation: 45
 	backgroundColor: subNavBar.backgroundColor
-
+	
 subCatLine = new Layer # green line in subcategory space
 	parent: subNavBar
 	y: Align.bottom
 	height: 3
 	backgroundColor: medGreen
-
 
 ### LOADING STATES ###
 
@@ -322,10 +218,10 @@ SubCats = [] # array where the subcategories will live. changes when a nav butto
 catPicker.midX = nav[0].midX+mainNav.x
 
 # sets the first subcategories for breakfast
-for subcat, i in SubCats_Breakfast
+for option, i in c
 	subcat = new SG.subCats
 		parent: subNavBar_container
-		text: SubCats_Breakfast[i]
+		text: c[0].subCats[i]
 		style:
 			position: "relative"
 	SubCats.push(subcat)
@@ -335,8 +231,10 @@ for subcat, i in SubCats_Breakfast
 # sets the first subcategory active state
 nav[0].active = true
 SubCats[0].active = true
-subCatLine.width = SubCats[0].width-40
-subCatLine.midX = SubCats[0].midX + subNavBar_container.x
+subCatLine.width = SubCats[0].width - 30
+subCatLine.x = SubCats[0].x + subNavBar_container.x + 15
+
+
 
 ## ----------- ##
 
@@ -347,7 +245,6 @@ emptySubs = ->
 		SubCats[i] = null
 	SubCats.length = null
 	subNavBar_container.width = 0
-	
 
 # Populate Subcat Array #
 fillSubs = (subsArray) ->
@@ -362,15 +259,18 @@ fillSubs = (subsArray) ->
 		subNavBar_container.width = subNavBar_container.width+layer.width
 		subNavBar_container.x = Align.center
 	SubCats[0].active = true
-	subCatLine.width = SubCats[0].width - 60
-	subCatLine.midX = SubCats[0].midX + subNavBar_container.x
+	subCatLine.width = SubCats[0].width - 30
+	subCatLine.x = SubCats[0].x + subNavBar_container.x + 15
+	
+
+
 
 # Fxn:  Select Subcategory #
 
 lineAnimation = 
 	options:
 		time: .5
-		curve: Spring(damping: .8)
+		curve: Spring(damping: 1)
 
 
 subCatSelect = (layer) ->
@@ -383,37 +283,39 @@ subCatSelect = (layer) ->
 		if layer == SubCats[0]
 			subCatLine.animate
 				options: lineAnimation.options
-				width: layer.width - 60
-				x: subNavBar_container.x + 30
+				width: layer.width - 30
+				x: subNavBar_container.x + 15
 		if layer == SubCats[1]
 			subCatLine.animate
 				options: lineAnimation.options
-				width: layer.width - 60
-				x: subNavBar_container.x + 30 + SubCats[0].width
+				width: layer.width - 30
+				x: subNavBar_container.x + 15 + SubCats[0].width
 		if layer == SubCats[2]
 			subCatLine.animate
 				options: lineAnimation.options
-				width: layer.width - 60
-				x: subNavBar_container.x + 30 + SubCats[0].width + SubCats[1].width
+				width: layer.width - 30
+				x: subNavBar_container.x + 15 + SubCats[0].width + SubCats[1].width
 		if layer == SubCats[3]
 			subCatLine.animate
 				options: lineAnimation.options
-				width: layer.width - 60
-				x: subNavBar_container.x + 30 + SubCats[0].width + SubCats[1].width + SubCats[2].width
+				width: layer.width - 30
+				x: subNavBar_container.x + 15 + SubCats[0].width + SubCats[1].width + SubCats[2].width
 		if layer == SubCats[4]
 			subCatLine.animate
 				options: lineAnimation.options
-				width: layer.width - 60
-				x: subNavBar_container.x + 30 + SubCats[0].width + SubCats[1].width + SubCats[2].width + SubCats[3].width
+				width: layer.width - 30
+				x: subNavBar_container.x + 15 + SubCats[0].width + SubCats[1].width + SubCats[2].width + SubCats[3].width
 		if layer == SubCats[5]
 			subCatLine.animate
 				options: lineAnimation.options
-				width: layer.width - 60
-				x: subNavBar_container.x + 30 + SubCats[0].width + SubCats[1].width + SubCats[2].width + SubCats[3].width + SubCats[4].width
+				width: layer.width - 30
+				x: subNavBar_container.x + 15 + SubCats[0].width + SubCats[1].width + SubCats[2].width + SubCats[3].width + SubCats[4].width
 
 
 for layer in SubCats
 	subCatSelect(layer)
+	
+
 
 ## Fxn: Switch Main Categories ##
 pickCategory = (layer) ->
@@ -425,7 +327,6 @@ pickCategory = (layer) ->
 
 
 switchCategory = (layer) -> #clicking on <layer> will change to active state and propogate subcategories to <subsArray>
-# 	print layer.name
 	layer.active == true
 	for option in nav
 		if option is layer
@@ -434,19 +335,19 @@ switchCategory = (layer) -> #clicking on <layer> will change to active state and
 			option.active = false
 	if layer == nav[0]
 		pickCategory(nav[0])
-		fillSubs(SubCats_Breakfast)
+		fillSubs(c[0].subCats)
 	if layer == nav[1]
 		pickCategory(nav[1])
-		fillSubs(SubCats_Lunch)
+		fillSubs(c[1].subCats)
 	if layer == nav[2]
 		pickCategory(nav[2])
-		fillSubs(SubCats_Kids)
+		fillSubs(c[2].subCats)
 	if layer == nav[3]
 		pickCategory(nav[3])
-		fillSubs(SubCats_Bakery)
+		fillSubs(c[3].subCats)
 	if layer == nav[4]
 		pickCategory(nav[4])
-		fillSubs(SubCats_Beverages)
+		fillSubs(c[4].subCats)
 		
 	for layer in SubCats
 		subCatSelect(layer)
@@ -456,7 +357,6 @@ for option in nav
 		switchCategory(this)
 
 # Fxn: Create Grid 
-
 makeGrid = (Data, exception) ->
 	Array = []
 	for option, i in Data
@@ -490,6 +390,6 @@ makeGrid = (Data, exception) ->
 	
 	gridContainer.parent = scroll.content
 
-makeGrid(Sandwiches, false)
+makeGrid(s, false) # runs makeGrid with array named "s"
 
 

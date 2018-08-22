@@ -1,10 +1,10 @@
 {
-  "orientation" : 0,
+  "orientation" : 90,
   "updateDelay" : 0.29999999999999999,
   "designModeSelected" : 0,
-  "cachedDeviceHeight" : 1024,
+  "cachedDeviceHeight" : 768,
   "contentScale" : 1,
-  "cachedDeviceWidth" : 768,
+  "cachedDeviceWidth" : 1024,
   "fullScreen" : false,
   "deviceType" : "apple-ipad-air-2-silver",
   "sharedPrototype" : true,
@@ -16,11 +16,20 @@
   "selectedHand" : "",
   "showBezel" : 0,
   "foldedCodeRanges" : [
-    "{822, 369}",
-    "{1192, 214}",
-    "{1408, 708}",
-    "{2322, 2854}",
-    "{5178, 929}"
+    "{0, 571}",
+    "{571, 369}",
+    "{940, 156}",
+    "{1097, 181}",
+    "{1279, 708}",
+    "{2237, 929}",
+    "{3167, 591}",
+    "{3759, 350}",
+    "{4110, 687}",
+    "{4817, 161}",
+    "{4979, 464}",
+    "{5444, 1443}",
+    "{6888, 847}",
+    "{7736, 715}"
   ],
   "deviceScale" : "fit"
 }
