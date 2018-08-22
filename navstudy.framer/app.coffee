@@ -264,23 +264,29 @@ for navItem, i in Categories #create 5 main nav buttons
 		text: navItem.name
 		icon: navItem.icon
 		active: false
-		style:
-			position: "relative"
+# 		style:
+# 			position: "relative"
 # 			flexGrow: "1"
 	nav.push(navItem)
-# nav[0].x = 0
-# nav[1].width = 145
-# nav[2].width = 48
-# nav[1].style = 
-# 	flexGrow: "3"
-# nav[2].x = nav[1].x+nav[1].width+15
-# nav[3].x = nav[2].x+nav[2].width-1
-# nav[4].x = nav[3].x+nav[3].width+29
 
-mainNav.style = 
-	display: "flex"
-	flexFlow: "row nowrap"
-	justifyContent: "space-between"
+
+mainNavSum = 0
+for layer in nav
+	mainNavSum = mainNavSum + layer.width
+
+mainNavSpace = (mainNav.width - mainNavSum) / (nav.length - 1)
+
+oldWidth = 0
+oldX = 0
+for layer, i in nav
+	if i == 0
+		layer.x = 0
+		oldWidth = layer.width
+	else
+		layer.x = oldX + oldWidth + mainNavSpace
+		oldWidth = layer.width
+		oldX = layer.x
+
 
 
 ## Navigation Picker Components ##
