@@ -56,6 +56,17 @@ H1 =
 	padding:
 		top: -4
 		bottom: -4
+link1 =
+	fontSize: 18
+	textAlign: "left"
+	letterSpacing: 0
+	lineHeight: 24/18
+	textTransform: null
+	padding:
+		top: -4
+		bottom: -4
+	fontFamily: "Calibre-Medium"
+	color: dkGreen
 
 nav1 = 
 	fontSize: 20
@@ -94,23 +105,30 @@ subnavON =
 c = data1.Categories
 s = data2.Sandwiches
 
-
 headline = new TextLayer
 	font: H1.font
 	textAlign: H1.textAlign
 	color: H1.color
 	letterSpacing: H1.letterSpacing
-	padding: H1.padding
+# 	padding: H1.padding
 	x: Align.center
 	y: 24
 	text: "Good morning."
 	width: Screen.width
+	backgroundColor: spacer
+
+leftText = new SG.Link1
+	text: "Sign In"
+	backgroundColor: white
+	x: 62
+leftText.y = headline.y + headline.height + H1.padding.bottom - leftText.height - 1
+print leftText.y
 
 ### Creating Containers ###
 
 mainNav = new Layer
 	x: Align.center
-	y: headline.maxY+42
+	y: headline.maxY+34
 	width: 642
 	height: 76
 	backgroundColor: null
@@ -393,3 +411,17 @@ makeGrid = (Data, exception) ->
 makeGrid(s, false) # runs makeGrid with array named "s"
 
 
+## Creating 2 States for the Top Stuff ##
+
+top = new Layer
+	width: Screen.width
+	height: subNavBar.y
+	backgroundColor: clear
+
+headline.parent = mainNav.parent = catPicker.parent = top
+
+
+hideNav = ->
+	mainNav.visible = false
+	catPicker.visible = false
+	

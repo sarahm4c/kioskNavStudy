@@ -58,7 +58,21 @@ subnavON =
 	fontFamily: "Calibre-Medium"
 	color: dkGreyTxt
 
-
+class exports.Link1 extends TextLayer
+	constructor: (@options={})->
+		@options.text ?= "link1"
+		_.defaults @options,
+			fontSize: 18
+			textAlign: "left"
+			letterSpacing: 0
+			lineHeight: 24/18
+			textTransform: null
+			padding:
+				top: -4
+				bottom: -4
+			fontFamily: "Calibre-Medium"
+			color: dkGreen
+		super @options
 
 
 ### Navigation ###
