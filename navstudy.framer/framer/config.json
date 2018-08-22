@@ -11,7 +11,11 @@
   "propertyPanelToggleStates" : {
     "Filters" : false
   },
+<<<<<<< HEAD
   "projectId" : "379BB500-7071-4386-BA33-FA55A670F78A",
+=======
+  "projectId" : "D5EA91B3-DFB5-470A-9ADC-6F616141152A",
+>>>>>>> Clearing-Duplicates
   "deviceOrientation" : 0,
   "selectedHand" : "",
   "showBezel" : 0,
