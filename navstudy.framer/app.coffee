@@ -408,14 +408,14 @@ for layer in SubCats
 	subCatSelect(layer)
 
 ## Fxn: Switch Main Categories ##
-pickCategory = (value) ->
+pickCategory = (layer) ->
 	catPicker.animate
-		x: (value) + mainNav.x + catPicker.width/2
+		midX: layer.midX + mainNav.x
 		options:
 			time: .3
 			curve: Bezier.easeOut
-spaceAvg = (nav[0].width + nav[1].width + nav[2].width + nav[3].width + nav[4].width)/mainNav.width
-value1 = 0
+
+
 switchCategory = (layer) -> #clicking on <layer> will change to active state and propogate subcategories to <subsArray>
 # 	print layer.name
 	layer.active == true
@@ -425,18 +425,19 @@ switchCategory = (layer) -> #clicking on <layer> will change to active state and
 		else 
 			option.active = false
 	if layer == nav[0]
+		pickCategory(nav[0])
 		fillSubs(SubCats_Breakfast)
-		value0 == (nav[0].width/2)
-		pickCategory(value0)
 	if layer == nav[1]
-		value1 = (nav[0].width + nav[1].width + spaceAvg)/2
-		pickCategory(value1)
+		pickCategory(nav[1])
 		fillSubs(SubCats_Lunch)
 	if layer == nav[2]
+		pickCategory(nav[2])
 		fillSubs(SubCats_Kids)
 	if layer == nav[3]
+		pickCategory(nav[3])
 		fillSubs(SubCats_Bakery)
 	if layer == nav[4]
+		pickCategory(nav[4])
 		fillSubs(SubCats_Beverages)
 		
 	for layer in SubCats
