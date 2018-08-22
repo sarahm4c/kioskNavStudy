@@ -9,13 +9,17 @@
   "deviceType" : "apple-ipad-air-2-silver",
   "sharedPrototype" : true,
   "propertyPanelToggleStates" : {
-    "Filters" : false
+
   },
+<<<<<<< HEAD
 <<<<<<< HEAD
   "projectId" : "379BB500-7071-4386-BA33-FA55A670F78A",
 =======
   "projectId" : "D5EA91B3-DFB5-470A-9ADC-6F616141152A",
 >>>>>>> Clearing-Duplicates
+=======
+  "projectId" : "4CF6B0E7-BF64-49AB-B594-8348B602404D",
+>>>>>>> Fixing-Main-Nav
   "deviceOrientation" : 0,
   "selectedHand" : "",
   "showBezel" : 0,
@@ -26,15 +30,15 @@
     "{1128, 214}",
     "{1343, 708}",
     "{2257, 2847}",
-    "{5106, 929}",
-    "{6037, 571}",
-    "{6610, 349}",
-    "{6961, 705}",
-    "{7686, 164}",
-    "{7851, 461}",
-    "{8313, 1440}",
-    "{9754, 1018}",
-    "{10773, 763}"
+    "{5106, 927}",
+    "{6035, 612}",
+    "{6649, 349}",
+    "{7000, 705}",
+    "{7725, 164}",
+    "{7890, 461}",
+    "{8352, 1440}",
+    "{9793, 881}",
+    "{10675, 763}"
   ],
   "deviceScale" : "fit"
 }

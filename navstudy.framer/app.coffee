@@ -206,7 +206,7 @@ mainNav = new Layer
 	y: headline.maxY+42
 	width: 642
 	height: 76
-	backgroundColor: spacer
+	backgroundColor: null
 
 subNavBar = new Layer #background layer
 	x: 0
@@ -254,7 +254,7 @@ scroll.contentInset =
 	bottom: 0
 
 
-## Main Nav ##
+## Populating Main Nav ##
 
 nav = []
 for navItem, i in Categories #create 5 main nav buttons
@@ -264,23 +264,29 @@ for navItem, i in Categories #create 5 main nav buttons
 		text: navItem.name
 		icon: navItem.icon
 		active: false
-		style:
-			position: "relative"
+# 		style:
+# 			position: "relative"
 # 			flexGrow: "1"
 	nav.push(navItem)
-# nav[0].x = 0
-# nav[1].width = 145
-# nav[2].width = 48
-# nav[1].style = 
-# 	flexGrow: "3"
-# nav[2].x = nav[1].x+nav[1].width+15
-# nav[3].x = nav[2].x+nav[2].width-1
-# nav[4].x = nav[3].x+nav[3].width+29
 
-mainNav.style = 
-	display: "flex"
-	flexFlow: "row nowrap"
-	justifyContent: "space-between"
+
+mainNavSum = 0
+for layer in nav
+	mainNavSum = mainNavSum + layer.width
+
+mainNavSpace = (mainNav.width - mainNavSum) / (nav.length - 1)
+
+oldWidth = 0
+oldX = 0
+for layer, i in nav
+	if i == 0
+		layer.x = 0
+		oldWidth = layer.width
+	else
+		layer.x = oldX + oldWidth + mainNavSpace
+		oldWidth = layer.width
+		oldX = layer.x
+
 
 
 ## Navigation Picker Components ##
@@ -402,14 +408,14 @@ for layer in SubCats
 	subCatSelect(layer)
 
 ## Fxn: Switch Main Categories ##
-pickCategory = (value) ->
+pickCategory = (layer) ->
 	catPicker.animate
-		x: (value) + mainNav.x + catPicker.width/2
+		midX: layer.midX + mainNav.x
 		options:
 			time: .3
 			curve: Bezier.easeOut
-spaceAvg = (nav[0].width + nav[1].width + nav[2].width + nav[3].width + nav[4].width)/mainNav.width
-value1 = 0
+
+
 switchCategory = (layer) -> #clicking on <layer> will change to active state and propogate subcategories to <subsArray>
 # 	print layer.name
 	layer.active == true
@@ -419,18 +425,19 @@ switchCategory = (layer) -> #clicking on <layer> will change to active state and
 		else 
 			option.active = false
 	if layer == nav[0]
+		pickCategory(nav[0])
 		fillSubs(SubCats_Breakfast)
-		value0 == (nav[0].width/2)
-		pickCategory(value0)
 	if layer == nav[1]
-		value1 = (nav[0].width + nav[1].width + spaceAvg)/2
-		pickCategory(value1)
+		pickCategory(nav[1])
 		fillSubs(SubCats_Lunch)
 	if layer == nav[2]
+		pickCategory(nav[2])
 		fillSubs(SubCats_Kids)
 	if layer == nav[3]
+		pickCategory(nav[3])
 		fillSubs(SubCats_Bakery)
 	if layer == nav[4]
+		pickCategory(nav[4])
 		fillSubs(SubCats_Beverages)
 		
 	for layer in SubCats

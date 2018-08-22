@@ -1,0 +1,35 @@
+{
+	"Categories": [
+		{
+			"id": "breakfast",
+			"name": "Breakfast",
+			"icon": "bagelICO",
+			"subCats": ["Egg Sandwiches", "Baked Eggs", "Oatmeal", "Bagels & Spreads", "Coffee & Tea"],
+		},
+		{
+			"id": "lunchDinner",
+			"name": "Lunch & Dinner",
+			"icon": "sandwichICO",
+			"subCats": ["Sandwiches", "Salads", "Soups", "Bowls"]
+		},
+		{
+			"id": "kids",
+			"name": "Kids",
+			"icon": "kidsICO",
+			"subCats": ["Soup & Pasta", "Sandwiches", "PANDAS", "Monkeys"]
+		},
+		{
+			"id": "bakery",
+			"name": "Bakery",
+			"icon": "croissantICO",
+			"subCats": ["Sweets", "Bagels", "Pandas"]
+		},
+		{
+			"id": "beverages",
+			"name": "Beverages",
+			"icon": "coffeeICO",
+			"subCats": ["Coffee & Tea", "Iced Tea & Lemonade", "Smoothies", "Bottled Stuff"],
+		},
+
+		]
+}
