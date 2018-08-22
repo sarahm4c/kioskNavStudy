@@ -1,33 +1,38 @@
 ## Install Fonts ##
 
-Utils.insertCSS """
-	@font-face {
-		font-family: 'Archer-Semibold';
+# Utils.insertCSS """
+# 	@font-face {
+# 		font-family: 'Archer-Semibold';
 # 		font-weight: 400;
-		src: url('./fonts/Archer-Semibold.otf') format("opentype");
-	}
-	@font-face {
-		font-family: 'Archer-Medium';
-		font-weight: 400;
-		src: url('./fonts/Archer-Medium.otf') format("opentype");
-	}
-	@font-face {
-		font-family: 'Calibre-Medium';
-		font-weight: 400;
-		src: url('./fonts/Calibre-Medium.otf') format("opentype");
-	}
-	@font-face {
-		font-family: 'Calibre-Regular';
-		font-weight: 400;
-		src: url('./fonts/Calibre-Regular.otf') format("opentype");
-	}
-"""
+# 		src: url('./fonts/Archer-Semibold.otf') format("opentype");
+# 	}
+# 	@font-face {
+# 		font-family: 'Archer-Medium';
+# 		font-weight: 400;
+# 		src: url('./fonts/Archer-Medium.otf') format("opentype");
+# 	}
+# 	@font-face {
+# 		font-family: 'Calibre-Medium';
+# 		font-weight: 400;
+# 		src: url('./fonts/Calibre-Medium.otf') format("opentype");
+# 	}
+# 	@font-face {
+# 		font-family: 'Calibre-Regular';
+# 		font-weight: 400;
+# 		src: url('./fonts/Calibre-Regular.otf') format("opentype");
+# 	}
+# """
+
 
 ## Device Type - iPad Air, Landscape ##
 Framer.Device.deviceType = "apple-ipad-air-2-silver"
 Framer.Device.orientation = 90
 background = new BackgroundLayer
 SG = require "Styleguide"
+
+
+Categories = JSON.parse Utils.domLoadDataSync “data/Categories.json”
+# 
 
 ## Colors ##
 white = new Color ("#FFF")
@@ -107,7 +112,7 @@ headline = new TextLayer
 	width: Screen.width
 
 ### Data ###
-Categories = [
+###Categories = [
 	{id: "breakfast", name: "Breakfast", icon: bagelICO, subcat1: "Egg Sandwiches", subcat2: "Baked Eggs", subcat3: "Oatmeal", subcat4: "Bagels & Spreads", subcat5: "Coffee & Tea"}
 	{id: "lunchDinner", name: "Lunch & Dinner", icon: sandwichICO, subcat1: "Egg Sandwiches", subcat2: "Baked Eggs", subcat3: "Oatmeal", subcat4: "Bagels & Spreads", subcat5: "Coffee & Tea"}
 	{id: "kids", name: "Kids", icon: kidsICO}
@@ -197,6 +202,7 @@ tunaSalad ={
 	size: "Whole",
 	calories: 670}
 Sandwiches.push(tunaSalad)
+###
 
 
 ### Creating Containers ###
@@ -269,6 +275,7 @@ for navItem, i in Categories #create 5 main nav buttons
 # 			flexGrow: "1"
 	nav.push(navItem)
 
+print Categories[0]
 
 mainNavSum = 0
 for layer in nav
