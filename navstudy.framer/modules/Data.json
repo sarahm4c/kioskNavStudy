@@ -1,0 +1,91 @@
+### Data ###
+Categories = [
+	{id: "breakfast", name: "Breakfast", icon: bagelICO, subcat1: "Egg Sandwiches", subcat2: "Baked Eggs", subcat3: "Oatmeal", subcat4: "Bagels & Spreads", subcat5: "Coffee & Tea"}
+	{id: "lunchDinner", name: "Lunch & Dinner", icon: sandwichICO, subcat1: "Egg Sandwiches", subcat2: "Baked Eggs", subcat3: "Oatmeal", subcat4: "Bagels & Spreads", subcat5: "Coffee & Tea"}
+	{id: "kids", name: "Kids", icon: kidsICO}
+	{id: "bakery", name: "Bakery", icon: croissantICO, subcat1: "Sweets", subcat2: "Bagels", subcat3: "Pandas"}
+	{id: "beverages", name: "Beverages", icon: coffeeICO, subcat1: "Hot Stuff", subcat2: "Cold Stuff", subcat3: "Fancy Stuff"}
+	]
+SubCats_Breakfast = ["Egg Sandwiches", "Baked Eggs", "Oatmeal", "Bagels & Spreads", "Coffee & Tea"]
+SubCats_Lunch = ["Sandwiches", "Salads", "Soups", "Bowls"]
+SubCats_Kids = ["Soup & Pasta", "Sandwiches", "PANDAS", "Monkeys"]
+SubCats_Bakery = ["Sweets", "Bagels", "Pandas"]
+SubCats_Beverages = ["Coffee & Tea", "Iced Tea & Lemonade", "Smoothies", "Bottled Stuff"]
+
+Sandwiches = []
+theItalian ={
+	name: "The Italian Sandwich",
+	ingredients: "Smoked Ham, Chianti Wine Salami, Spicy Sopressa, Provolone, Spicy Giardiniera, Basil Mayo, Fresh Arugula",
+	bread: "Hoagie Roll",
+	price: 9.59,
+	size: "Whole",
+	calories: 880}
+Sandwiches.push(theItalian)
+BTB ={
+	name: "Bacon Turkey Bravo",
+	ingredients: "Signature Sauce, All-Natural Bacon, Green Leaf Lettuce, Gouda, Turkey, Salt & Pepper, Sliced Tomatoes",
+	bread: "Tomato Basil Bread",
+	price: 9.59,
+	size: "Whole",
+	calories: 630}
+Sandwiches.push(BTB)
+modernCaprese ={
+	name: "Modern Caprese Sandwich",
+	price: 10.59,
+	size: "Whole",
+	calories: 760}
+Sandwiches.push(modernCaprese)
+steakAndArugula ={
+	name: "Steak & Arugula",
+	price: 10.59,
+	size: "Whole",
+	calories: 500,}
+Sandwiches.push(steakAndArugula)
+turkeyAppleCheddar ={
+	name: "Roasted Turkey, Apple & Cheddar Sandwich",
+	price: 10.59,
+	size: "Whole",
+	calories: 710}
+Sandwiches.push(turkeyAppleCheddar)
+turkeyBLT ={
+	name: "Roasted Turkey & Avocado BLT",
+	price: 10.59,
+	size: "Whole",
+	calories: 640}
+Sandwiches.push(turkeyBLT)
+napaChicken ={
+	name: "Napa Almond Chicken Salad Sandwich",
+	price: 9.59,
+	size: "Whole",
+	calories: 550}
+Sandwiches.push(napaChicken)
+turkeySandwich ={
+	name: "Turkey Sandwich",
+	price: 7.69,
+	size: "Whole",
+	calories: 560}
+Sandwiches.push(turkeySandwich)
+sierraTurkey ={
+	name: "Sierra Turkey Sandwich",
+	price: 9.59,
+	size: "Whole",
+	calories: 730}
+Sandwiches.push(sierraTurkey)
+hamAndSwiss = {
+	name: "Ham & Swiss Sandwich",
+	price: 7.69,
+	size: "Whole",
+	calories:  730}
+Sandwiches.push(hamAndSwiss)
+medVeggie ={
+	name: "Mediterranean Veggie",
+	price: 7.69,
+	size: "Whole",
+	calories:  440}
+Sandwiches.push(medVeggie)
+tunaSalad ={
+	name: "Tuna Salad Sandwich",
+	price: 7.69,
+	size: "Whole",
+	calories: 670}
+Sandwiches.push(tunaSalad)
