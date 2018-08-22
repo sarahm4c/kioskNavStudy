@@ -1,38 +1,38 @@
-## Install Fonts ##
+# Install Fonts ##
 
-# Utils.insertCSS """
-# 	@font-face {
-# 		font-family: 'Archer-Semibold';
-# 		font-weight: 400;
-# 		src: url('./fonts/Archer-Semibold.otf') format("opentype");
-# 	}
-# 	@font-face {
-# 		font-family: 'Archer-Medium';
-# 		font-weight: 400;
-# 		src: url('./fonts/Archer-Medium.otf') format("opentype");
-# 	}
-# 	@font-face {
-# 		font-family: 'Calibre-Medium';
-# 		font-weight: 400;
-# 		src: url('./fonts/Calibre-Medium.otf') format("opentype");
-# 	}
-# 	@font-face {
-# 		font-family: 'Calibre-Regular';
-# 		font-weight: 400;
-# 		src: url('./fonts/Calibre-Regular.otf') format("opentype");
-# 	}
-# """
-
+Utils.insertCSS """
+	@font-face {
+		font-family: 'Archer-Semibold';
+		font-weight: 400;
+		src: url('./fonts/Archer-Semibold.otf') format("opentype");
+	}
+	@font-face {
+		font-family: 'Archer-Medium';
+		font-weight: 400;
+		src: url('./fonts/Archer-Medium.otf') format("opentype");
+	}
+	@font-face {
+		font-family: 'Calibre-Medium';
+		font-weight: 400;
+		src: url('./fonts/Calibre-Medium.otf') format("opentype");
+	}
+	@font-face {
+		font-family: 'Calibre-Regular';
+		font-weight: 400;
+		src: url('./fonts/Calibre-Regular.otf') format("opentype");
+	}
+"""
 
 ## Device Type - iPad Air, Landscape ##
 Framer.Device.deviceType = "apple-ipad-air-2-silver"
 Framer.Device.orientation = 90
+
 background = new BackgroundLayer
 SG = require "Styleguide"
 
 
-Categories = JSON.parse Utils.domLoadDataSync “data/Categories.json”
-# 
+data = JSON.parse Utils.domLoadDataSync “data/Categories.json”
+
 
 ## Colors ##
 white = new Color ("#FFF")
@@ -54,6 +54,7 @@ coffeeICO = "images/ICO/coffeeICO.png"
 croissantICO = "images/ICO/croissantICO.png"
 kidsICO = "images/ICO/kidsICO.png"
 sandwichICO = "images/ICO/sandwichICO.png"
+
 
 ## Font Styles ##
 #  "fontStyle fontWeight fontSize/lineHeight fontFamily"  #
@@ -348,7 +349,6 @@ emptySubs = ->
 	subNavBar_container.width = 0
 	
 
-
 # Populate Subcat Array #
 fillSubs = (subsArray) ->
 	emptySubs()
@@ -411,6 +411,7 @@ subCatSelect = (layer) ->
 				width: layer.width - 60
 				x: subNavBar_container.x + 30 + SubCats[0].width + SubCats[1].width + SubCats[2].width + SubCats[3].width + SubCats[4].width
 
+
 for layer in SubCats
 	subCatSelect(layer)
 
@@ -450,7 +451,6 @@ switchCategory = (layer) -> #clicking on <layer> will change to active state and
 	for layer in SubCats
 		subCatSelect(layer)
 
-
 for option in nav
 	option.onClick ->
 		switchCategory(this)
@@ -478,7 +478,7 @@ makeGrid = (Data, exception) ->
 	
 		if i == 0
 			gridContainer.height = x
-# 			print "start"
+
 		if (i/3) % 1 == 0
 			gridContainer.height = (x/3)*i
 		else if ((i+1)/3) % 1 == 0
